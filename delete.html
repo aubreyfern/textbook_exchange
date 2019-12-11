@@ -1,0 +1,326 @@
+<style>
+    @import url('https://fonts.googleapis.com/css?family=Work+Sans:400,600');
+.transactions {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.transactions li {
+  display: inline-block;
+  margin-left: 30px;
+  padding-top: 10px;
+
+  position: relative;
+}
+
+.transactions a {
+  color: #000000;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-size: 16px;
+}
+
+.transactions a:hover {
+  color: #484848;
+}
+
+.transactions a::before {
+  content: '';
+  display: block;
+  height: 5px;
+  background-color: #484848;
+
+  position: absolute;
+  top: 0;
+  width: 0%;
+
+  transition: all ease-in-out 250ms;
+}
+
+.transactions a:hover::before {
+  width: 100%;
+}
+header {
+  padding: 20px;
+	background: #ffffff;
+  align-content: center;
+}
+
+header a{
+    text-decoration: none;
+    color: #000000;
+}
+.login {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.login li {
+  display: inline-block;
+  margin-left: 30px;
+  padding-top: 10px;
+
+  position: relative;
+}
+
+.login a {
+  color: #000000;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-size: 16px;
+}
+
+.login a:hover {
+  color: #484848;
+}
+
+.login a::before {
+  content: '';
+  display: block;
+  height: 5px;
+  background-color: #484848;
+
+  position: absolute;
+  top: 0;
+  width: 0%;
+
+  transition: all ease-in-out 250ms;
+}
+
+.login a:hover::before {
+  width: 100%;
+}
+
+.account {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.account li {
+  display: inline-block;
+  margin-left: 30px;
+  padding-top: 10px;
+
+  position: relative;
+}
+
+.account a {
+  color: #000000;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-size: 16px;
+}
+
+.account a:hover {
+  color: #484848;
+}
+
+.account a::before {
+  content: '';
+  display: block;
+  height: 5px;
+  background-color: #484848;
+
+  position: absolute;
+  top: 0;
+  width: 0%;
+
+  transition: all ease-in-out 250ms;
+}
+
+.account a:hover::before {
+  width: 100%;
+}
+
+body {
+	margin: 0;
+	font-family: 'Work Sans', sans-serif;
+	font-weight: 800;
+  background-color: #2F4F4F;
+}
+
+h2 {
+  color: #000000;
+}
+
+.transSearch {
+  align-content: center;
+}
+
+.transSearch input[type=text] {
+  width: 200px;
+  box-sizing: border-box;
+  border: 2px solid #ccc;
+  border-radius: 4px;
+  font-size: 16px;
+  background-color: white;
+  background-image: url('searchicon.png');
+  background-position: 10px 10px;
+  background-repeat: no-repeat;
+  padding: 12px 20px 12px 40px;
+  -webkit-transition: width 0.4s ease-in-out;
+  transition: width 0.4s ease-in-out;
+}
+
+.transSearch input[type=text]:focus {
+  width: 30%;
+}
+
+.transSearch button {
+  width: 40px;
+  padding: 10px;
+  background: #ccc;
+  border: 2px solid #ccc;
+  border-radius: 4px;
+  color: #000000;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-left: none; /* Prevent double borders */
+  cursor: pointer;background-position: 10px 10px;
+  background-repeat: no-repeat;
+  padding: 12px 20px 12px 40px;
+}
+
+.transSearch button:hover {
+  background: #565656;
+}
+
+.transSearch::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+.btn {
+border: 2px solid transparent;
+background-color: #848484;
+color:#ffffff;
+font-size: 16px;
+align-content: center;
+line-height: 25px;
+padding: 10px 0;
+text-decoration: none;
+text-shadow: none;
+border-radius: 3px;
+box-shadow: none;
+transition: 0.25s;
+width: 250px;
+margin: 0 auto;
+}
+
+.btn:hover {
+    background-color: #009090;
+}
+
+table {
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+
+}
+td, th {
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 8px;
+}
+tr:nth-child(even) {
+    background-color: #dddddd;
+}
+tr:nth-child(odd){
+    background-color: #848484;
+}
+    .donate input[type=text], select, textarea {
+  width: 100%; /* Full width */
+  padding: 12px; /* Some padding */
+  border: 1px solid #ccc; /* Gray border */
+  border-radius: 4px; /* Rounded borders */
+  box-sizing: border-box; /* Make sure that padding and width stays in place */
+  margin-top: 6px; /* Add a top margin */
+  margin-bottom: 16px; /* Bottom margin */
+  resize: vertical /* Allow the user to vertically resize the textarea (not horizontally) */
+}
+
+/* Style the submit button with a specific background color etc */
+.donate input[type=submit] {
+  background-color: #009090;
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+/* When moving the mouse over the submit button, add a darker green color */
+.donate input[type=submit]:hover {
+  background-color: #066;
+}
+
+/* Add a background color and some padding around the form */
+.donate {
+  border-radius: 5px;
+  background-color: #f2f2f2;
+  padding: 20px;
+}
+</style>
+
+<html lang="en">
+<header>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Home</title>
+    <h1 align="center"><a href="{{ url_for('all') }}">Textbook Exchange Website</a></h1>
+    <div class = "transactions">
+    <nav align="center">
+        <ul>
+          <li><a href="{{ url_for('donateRedirect') }}">Donate Book</a></li>
+          <li><a href="{{ url_for('checkOutRedirect') }}">Check Out Book</a></li>
+          <li><a href="{{ url_for('transactionsRedirect') }}">Transactions</a></li>
+            <li><a href="{{ url_for('updateRedirect') }}">Add New Book</a></li>
+          <li><a href="{{ url_for('deleteRedirect') }}">Delete Book</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+
+<div class="content">
+<body>
+<div class="donate">
+  <h2>Delete Search</h2>
+  <form action="/deleteSearch" method=post class="transSearch">
+    <input align="center" type=text name=search placeholder="Type in book ID to delete..." value="{{ request.form.search}}"></br>
+    <div class="actions"><input type=submit value="Submit"></div>
+  </form>
+</div>
+  <table id="transResults" style="width:100%">
+  {% if result %}
+  <tr>
+      <th>Book ID</th>
+      <th>Book Name</th>
+      <th>ISBN</th>
+      <th>Subject</th>
+      <th>Class</th>
+      <th>Transaction</th>
+  </tr>
+  {% for row in result %}
+  <tr>
+      <td> {{ row.BookID }}</td>
+      <td> {{ row.BookName }}</td>
+      <td>{{ row.Isbn }}</td>
+      <td>{{ row.Subject }}</td>
+      <td>{{ row.ClassId }}</td>
+      <td>{{ row.TransactionType }}</td>
+  </tr>
+  {% endfor %}
+  {% endif %}
+</table>
+{% if data %}
+      <h2 align="center">{{ data }}</h2>
+{% endif %}
+</body>
+</div>
+</html>

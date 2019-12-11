@@ -1,0 +1,333 @@
+<style>
+@import url('https://fonts.googleapis.com/css?family=Work+Sans:400,600');
+
+header {
+  padding: 20px;
+	background: #ffffff;
+    text-decoration: none;
+      list-style: none;
+
+}
+
+header a{
+    text-decoration: none;
+    color: #000000;
+
+}
+
+header a:visited{
+    text-decoration: none;
+    color: #000000;
+}
+body {
+	margin: 0;
+	font-family: 'Work Sans', sans-serif;
+	font-weight: 800;
+    background-color: #2F4F4F;
+}
+
+.class {
+	width: 70%;
+	margin: 0 auto;
+}
+
+.content {
+  height: 200vh;
+  background-blend-mode: multiply;
+  background-size: cover;
+  color: #ffffff;
+}
+
+.transactions {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.transactions li {
+  display: inline-block;
+  margin-left: 30px;
+  padding-top: 10px;
+
+  position: relative;
+}
+
+.transactions a {
+  color: #000000;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-size: 16px;
+}
+
+.transactions a:hover {
+  color: #484848;
+}
+
+.transactions a::before {
+  content: '';
+  display: block;
+  height: 5px;
+  background-color: #484848;
+
+  position: absolute;
+  top: 0;
+  width: 0%;
+
+  transition: all ease-in-out 250ms;
+}
+
+.transactions a:hover::before {
+  width: 100%;
+}
+
+
+.subjects {
+  background: #55d6aa;
+}
+
+.subjects ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.subjects li {
+  display: inline-block;
+  margin-left: 30px;
+  padding-top: 10px;
+
+  position: relative;
+}
+
+.subjects a {
+  color: #484848;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-size: 16px;
+}
+
+.subjects a:hover {
+  color: #848484;
+}
+
+.subjects a::before {
+  content: '';
+  display: block;
+  height: 5px;
+  background-color: #848484;
+
+  position: absolute;
+  top: 0;
+  width: 0%;
+
+  transition: all ease-in-out 250ms;
+}
+
+.subjects a:hover::before {
+  width: 100%;
+}
+
+.searchbar {
+  align-content: center;
+    display: inline-block;
+}
+
+.searchbar input[type=text] {
+  width: 200px;
+  box-sizing: border-box;
+  border: 2px solid #ccc;
+  border-radius: 4px;
+  font-size: 16px;
+  background-color: white;
+  background-image: url('searchicon.png');
+  background-position: 10px 10px;
+  background-repeat: no-repeat;
+  padding: 12px 20px 12px 40px;
+  -webkit-transition: width 0.4s ease-in-out;
+  transition: width 0.4s ease-in-out;
+}
+
+.searchbar input[type=text]:focus {
+  width: 30%;
+}
+
+.searchbar button {
+  width: 40px;
+  padding: 10px;
+  background: #ccc;
+  border: 2px solid #ccc;
+  border-radius: 4px;
+  color: #000000;
+  font-size: 16px;
+  display:block;
+  border: 1px solid #ccc;
+  border-left: none; /* Prevent double borders */
+  cursor: pointer;background-position: 10px 10px;
+  background-repeat: no-repeat;
+  padding: 12px 20px 12px 40px;
+}
+
+.searchbar input:hover {
+  background: #565656;
+}
+
+.searchbar::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+input {
+text-align: center;
+background-color: #ECF0F1;
+border: 2px solid transparent;
+border-radius: 3px;
+font-size: 16px;
+font-weight: 200;
+padding: 10px 0;
+width: 250px;
+transition: border .5s;
+}
+
+input:focus {
+border: 2px solid #3498DB;
+box-shadow: none;
+}
+
+.btn {
+border: 2px solid transparent;
+background-color: #848484;
+color:#ffffff;
+font-size: 16px;
+align-content: center;
+line-height: 25px;
+padding: 10px 0;
+text-decoration: none;
+text-shadow: none;
+border-radius: 3px;
+box-shadow: none;
+transition: 0.25s;
+width: 250px;
+margin: 0 auto;
+}
+
+.btn:hover {
+    background-color: #009090;
+}
+
+</style>
+<html lang="en">
+<header>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Textbook Exchange</title>
+    <h1 align="center"><a href="{{ url_for('all') }}">Textbook Exchange Website</a></h1>
+<div class = "transactions">
+    <nav align="center">
+        <ul>
+          <li><a href="{{ url_for('donateRedirect') }}">Donate Book</a></li>
+          <li><a href="{{ url_for('checkOutRedirect') }}">Check Out Book</a></li>
+          <li><a href="{{ url_for('transactionsRedirect') }}">Transactions</a></li>
+            <li><a href="{{ url_for('updateRedirect') }}">Add New Book</a></li>
+          <li><a href="{{ url_for('deleteRedirect') }}">Delete Book</a></li>
+      </ul>
+    </nav>
+  </div>
+  {% block content %}
+<div align="center" class="transactions">
+<form action="/search" method=post class="searchbar">
+    <input align="center" type=text name=search placeholder="Search for books..." value="{{ request.form.search}}"></br>
+    <div class="actions"><input type=submit value="Search"></div>
+</form>
+</div>
+{% endblock %}
+</header>
+
+
+
+<body>
+  <div class = "subjects">
+    <nav align="center">
+        <ul>
+          <li><a href="{{ url_for('biochemistry') }}">Biochemistry</a></li>
+          <li><a href="{{ url_for('biology') }}">Biology</a></li>
+          <li><a href="{{ url_for('chemistry') }}">Chemistry</a></li>
+          <li><a href="{{ url_for('cs') }}">Computer Science</a></li>
+          <li><a href="{{ url_for('dataAnalytics') }}">Data Analytics</a></li>
+          <li><a href="{{ url_for('env') }}">Environmental Science & Policy</a></li>
+          <li><a href="{{ url_for('foodScience') }}">Food Science</a></li>
+          <li><a href="{{ url_for('math') }}">Math</a></li>
+          <li><a href="{{ url_for('physics') }}">Physics</a></li>
+          <li><a href="{{ url_for('se') }}">Software Engineering</a></li>
+      </ul>
+    </nav>
+  </div>
+
+  <div class="content">
+  {% if data %}
+      <h2 align="center">{{ data }}</h2>
+  {% endif %}
+  {% if doAll %}
+
+<div class="btn">
+<form action="/export">
+
+      <input type="submit" value="Export to CSV" class="btn" align="center">
+    {% if exported %}
+        <h3 align="center">{{ exported }}</h3>
+    {% endif %}
+
+</form>
+</div>
+  {% endif %}
+
+
+    <style>
+table {
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+
+}
+td, th {
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 8px;
+}
+tr:nth-child(even) {
+    background-color: #dddddd;
+}
+tr:nth-child(odd){
+    background-color: #848484;
+}
+</style>
+
+<body>
+
+    <table id="subjects" style="width:100%">
+    {% if result %}
+    <tr>
+        <th>Book ID</th>
+        <th>Name</th>
+        <th>ISBN</th>
+        <th>Class</th>
+        <th>Required</th>
+        <th>Quantity</th>
+    </tr>
+    {% for row in result %}
+    <tr>
+        <td>{{ row.BookId }}</td>
+        <td> {{ row.BookName }}</td>
+        <td> {{ row.Isbn }}</td>
+        <td>{{ row.ClassName }}</td>
+        <td>{{ row.Required }}</td>
+        <td>{{ row.Quantity }}</td>
+    </tr>
+    {% endfor %}
+    {% endif %}
+
+</table>
+</body>
+  </div>
+</html>
